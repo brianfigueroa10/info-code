@@ -13,7 +13,7 @@ export default function PostCard({ page }: { page: any }) {
       : ''
 
   return (
-    <Card key={page.id} className="rounded-md p-4 w-full sm:w-96">
+    <Card key={page.id} className="rounded-md p-4 w-full max-w-96 sm:w-96">
       <Image
         src={coverUrl}
         alt="page"
