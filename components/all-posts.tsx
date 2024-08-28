@@ -1,27 +1,34 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import TagSelector from './tag-selector'
 import PostCard from './post-section-card'
 
 export default function AllPosts({ posts }: { posts: any[] }) {
   const [filter, setFilter] = useState('')
+  const [allTags, setAllTags] = useState<string[]>([])
+  const [filteredPosts, setFilteredPosts] = useState(posts)
 
-  // Obtener todas las etiquetas únicas
-  const allTags = Array.from(
-    new Set(
-      posts.flatMap((page: any) =>
-        page.properties.Etiquetas?.multi_select.map((tag: any) => tag.name)
+  useEffect(() => {
+    // Obtener todas las etiquetas únicas
+    const tags = Array.from(
+      new Set(
+        posts.flatMap((page: any) =>
+          page.properties.Etiquetas?.multi_select.map((tag: any) => tag.name)
+        )
       )
     )
-  )
+    setAllTags(tags)
+  }, [posts])
 
-  const filteredPosts = posts.filter((page: any) =>
-    page.properties.Etiquetas?.multi_select.some((tag: any) =>
-      tag.name.includes(filter)
+  useEffect(() => {
+    const filtered = posts.filter((page: any) =>
+      page.properties.Etiquetas?.multi_select.some((tag: any) =>
+        tag.name.includes(filter)
+      )
     )
-  )
-
+    setFilteredPosts(filtered)
+  }, [filter, posts])
   return (
     <div className="flex flex-col items-center justify-center w-full">
       <aside className="flex max-md:flex-col gap-5 justify-between w-10/12 items-center mb-6">
