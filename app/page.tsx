@@ -1,6 +1,8 @@
 import AllPosts from '@/components/all-posts'
 import { fetchPages } from '@/lib/notion'
 
+export const revalidate = 0
+
 export default async function Home() {
   const posts = await fetchPages()
 
