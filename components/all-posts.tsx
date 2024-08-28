@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import TagSelector from './tag-selector'
 import PostCard from './post-section-card'
 
