@@ -2,9 +2,11 @@ import React from 'react'
 
 export default function page() {
   return (
-    <section className="w-8/12 flex flex-col items-center justify-center gap-4">
-      <h1 className="text-6xl font-bold uppercase mb-9">Sobre Nosotros</h1>
-      <p>
+    <section className=" w-11/12 xl:w-9/12 flex flex-col items-center justify-center gap-4">
+      <h1 className="text-6xl font-bold uppercase mb-9 max-md:text-center max-md:text-4xl">
+        Sobre Nosotros
+      </h1>
+      <p className="text-pretty">
         Bienvenido a <strong>InfoCODE</strong>, un espacio creado por y para
         apasionados de la tecnología, la informática y la programación. Aquí,
         nuestra misión es mantenerte al tanto de lo último en el mundo digital,
