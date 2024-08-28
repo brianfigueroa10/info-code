@@ -84,6 +84,7 @@
   max-height: 500px;
   border-radius: 2%;
   margin: 30px 0;
+  object-position: center;
 }
 
 @media (max-width: 768px) {
