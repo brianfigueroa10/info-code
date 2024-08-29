@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from 'next-view-transitions'
 import { ModeToggle } from './toogle-mode'
 import { buttonVariants } from './ui/button'
 import Image from 'next/image'

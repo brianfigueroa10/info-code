@@ -1,8 +1,9 @@
 import { Card, CardDescription, CardTitle } from '@/components/ui/card'
 import Image from 'next/image'
-import Link from 'next/link'
+
 import { Badge } from '@/components/ui/badge'
 import { formatRelativeTime } from '@/lib/format-date'
+import { Link } from 'next-view-transitions'
 
 export default function PostCard({ page }: { page: any }) {
   const coverUrl =
